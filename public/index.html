@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= webpackConfig.name %>
+  </title>
+  <!-- 全局酝置 -->
+
+  <script>
+    let url = '/businessAdmin/common';
+    let uploadUrl = 'http://server.dyzwdbk.com/gov-wiki-admin/'
+    window._CONFIG = {};
+    window._CONFIG['apiUrl'] = url;
+    window._CONFIG['uploadUrl'] = uploadUrl;
+    window._CONFIG['upload'] = uploadUrl + '/file/upload';
+    window._CONFIG['excelView'] = url + '/Wxoperation/exportRecord';
+    window._CONFIG['imgView'] = uploadUrl + '/file/download?id=';
+    window._CONFIG['fileView'] = url + '/file/findById';
+    window._CONFIG['fileList'] = uploadUrl + '/file/findByReferenceId';
+    window._CONFIG['fileDelete'] = uploadUrl + '/file/deleteById';
+    window._CONFIG['domianURL'] = 'http://server.dyzwdbk.com/gov-wiki-admin/file/upload';
+    window._CONFIG['casPrefixUrl'] = 'http://cas.example.org:8443/cas';
+    window._CONFIG['imgDomainURL'] = window._CONFIG['domianURL'] + '/sys/common/view';
+    window._CONFIG['downloadUrl'] = window._CONFIG['domianURL'] + '/sys/common/download';
+    window._CONFIG['pdfDomainURL'] = window._CONFIG['domianURL'] + '/sys/common/pdf/pdfPreviewIframe';
+
+  </script>
+  <style>
+    body {
+      -webkit-text-size-adjust: 100% !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <script src="https://tftb.sczwfw.gov.cn:8085/jmopen/jssdk/index.js"></script>
+  </div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
