@@ -29,12 +29,12 @@
         </li>
         <li>
           <span>真实姓名</span>
-          <input type="text" class="inp-style-4" maxlength="8" :value="formData.realName" disabled>
+          <input type="text" class="inp-style-4" maxlength="8" :value="formData.realName?formatDataName(formData.realName):''" disabled>
 <!--          <img src="../../assets/images/btn_modify.png" alt="" @click="editIcardInfo">-->
         </li>
         <li>
           <span>身份证号</span>
-          <input type="text" class="inp-style-4" maxlength="18" :value="formData.idCard" disabled>
+          <input type="text" class="inp-style-4" maxlength="18" :value="formData.idCard?formatDataIDCard(formData.idCard):''" disabled>
 <!--          <img src="../../assets/images/btn_modify.png" alt="" @click="editIcardInfo">-->
         </li>
         <!-- <li>
@@ -384,6 +384,12 @@ export default {
     },
     formatData(tel){
       return tel.replace(tel.substring(3,7), "****")
+    },
+    formatDataIDCard(idcard){
+      return idcard.replace(idcard.substring(6,idcard.length-4), "****")
+    },
+    formatDataName(name){
+      return name.replace(name.substring(2,name.length), "*")
     },
     show_edit_psd(){
       if(this.formData.mobile == ''){
